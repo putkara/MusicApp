@@ -28,6 +28,5 @@ There are two parts to it, the auth-server, and the client.
 - Make sure you have a song playing (or paused) on a Spotify app
 - Visit http://localhost:3000
 - Click 'Log in with Spotify' and log in
-- Click the 'Check Now Playing' Button
-- Your currently playing song's name and album art should appear
+- Click the 'fetch data from spotify' Button
 
