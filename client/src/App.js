@@ -57,6 +57,18 @@ fetchDataFromSpotify=()=>{
                     (data) => {this.setState({data:data}); console.log(data) }
                 ));
             });
+            fetch('https://api.spotify.com/v1/tracks?ids=3n3Ppam7vgaVa1iaRUc9Lp%2C3twNvmDtFQtAd5gMKedhLD', {
+            method: 'GET', headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + this.token
+            }
+        })
+            .then((response) => {
+                console.log(response.json().then(
+                    (data) => { console.log(data) }
+                ));
+            });
 }
   render() {
     return (
@@ -72,6 +84,9 @@ fetchDataFromSpotify=()=>{
        
           <div><button onClick={() => this.fetchDataFromSpotify()}>
             Fetch Data From Spotify
+          </button>
+          <button onClick={() => this.getNowPlaying()}>
+            Play
           </button>
           {this.state.data?<div>
             <h2>Artist Name: {this.state.data.name} </h2>
